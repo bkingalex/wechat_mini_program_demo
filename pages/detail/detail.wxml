@@ -1,0 +1,4 @@
+<!--pages/detail/detail.wxml-->
+<image class='prodcut-img'></image>
+
+<button bindtap='backBtn'>返回</button>
