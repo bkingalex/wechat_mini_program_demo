@@ -8,7 +8,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "289FDE",
-    "navigationBarTitleText": "Demo",
+    "navigationBarTitleText": "测试",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
