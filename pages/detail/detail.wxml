@@ -2,3 +2,7 @@
 <image class='prodcut-img'></image>
 
 <button bindtap='backBtn'>返回</button>
+
+<button bindtap='tell'>电话咨询</button>
+
+<button bindtap='copy'>复制</button>

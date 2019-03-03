@@ -1,7 +1,7 @@
 // pages/detail/detail.js
 Page({
 
-  backBtn:function(){
+  backBtn: function() {
     wx.navigateBack()
   },
 
@@ -9,63 +9,37 @@ Page({
    * 页面的初始数据
    */
   data: {
- 
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     //通过onLoad的options对象获取传递过来的id
-    console.log("id",options.id);
+    console.log("id", options.id);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  tell: function() {
+    wx.makePhoneCall({
+      phoneNumber: '6666',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  copy: function() {
+    if (wx.setClipboardData) {
+      wx.setClipboardData({
+          data: '复制的内容',
+          success: function(result) {
+            wx.showModal({
+              title: '复制成功',
+              content: '内容复制成功！',
+            })
+          }
+        })
+    }else{
+      wx.showModal({
+        title: '复制失败',
+        content: '请升级你的微信版本！',
+      })
+    }
+    }
 })
