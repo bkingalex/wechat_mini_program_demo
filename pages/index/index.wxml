@@ -1,26 +1,25 @@
-<swiper
-  indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}"
-  interval="{{interval}}"
-  duration="{{duration}}"
->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
       <image src="{{item}}" class="slide-image" width="355" height="150" />
     </swiper-item>
   </block>
 </swiper>
-
+<button type='primary' bindtap='addProduct '>添加</button>
 <view class='product-list'>
-    <view class='product-item' wx:for="{{productList}}">
+  <view class='product-item'>
+    <block wx:for="{{productList}}">
       <image class='product-logo' src='{{item.img}}'></image>
       <view class='product-body'>
         <view class='product-title'>{{item.title}}</view>
         <text class='product-desc'>{{item.desc}}</text>
         <view class='product-footer'>
-         <button class='btn-detail' bindtap='toDetail' data-index="{{item.id}}">查看详情</button>  
-          <button class='btn-talk' open-type='contact'>免费咨询</button> 
+          <button class='btn-detail' bindtap='toDetail' data-index="{{item.id}}">查看详情</button>
+          <button class='btn-talk' open-type='contact'>免费咨询</button>
+          <button type='default' url="../edit/edit?id={{item.id}}">编辑</button>
+          <button type='danger' bindtap='deleteProduct' data-productid='{{item.id}}' data-productname='{{item.title}}' data-index='{{index}}'>删除</button>
         </view>
       </view>
-    </view>
+    </block>
+  </view>
 </view>

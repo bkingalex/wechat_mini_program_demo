@@ -33,6 +33,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    //调用：app.globalData.[变量名]
+    userInfo: null,
+    glob_test:"全局变量测试",
+    host:"http://localhost:8080"
   }
 })

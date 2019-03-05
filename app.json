@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/userinfo/userinfo",
     "pages/logs/logs",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/add/add"
   ],
   "window":{
     "backgroundTextStyle":"light",
