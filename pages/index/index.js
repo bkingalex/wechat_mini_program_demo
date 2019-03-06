@@ -68,7 +68,14 @@ wx.getStorage({
   addProduct: function() {
     console.log("to add function");
     wx.navigateTo({
-      url: ' /pages/add/add ',
+      url: "/pages/add/add"
+    })
+  },
+  editProduct: function(e) {
+    var id = e.target.dataset.id;
+    console.log("editProduct:id = ", id);
+    wx.navigateTo({
+      url: "/pages/add/add?id=" + id,
     })
   },
   deleteProduct: function(e) {
@@ -87,7 +94,7 @@ wx.getStorage({
             success: function(res) {
               var result = res.data;
               console.log(result);
-              var toastText="删除成功！";
+              var toastText = "删除成功！";
               if (result != true) {
                 toastText = "删除失败！";
               } else {
